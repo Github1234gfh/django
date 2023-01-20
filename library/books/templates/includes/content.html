@@ -1,0 +1,13 @@
+
+{% for i in object_list %}
+	<div class="book {{ i.category }} book__item">
+		<h1>{{ i.name_book }}</h1>
+		<p>Aftor - {{ i.autor }}</p>
+		<p>Category - {{ i.category }}</p>
+		<p>Date public - {{ i.date }}</p>
+		<div class="jdkfg">
+			<a class="dgf" href="{% url 'delete' i.id %}">Delete</a>
+			<a class="dgf" href="{% url 'edit' i.id %}">Edit</a>
+		</div>
+	</div>
+{% endfor %}

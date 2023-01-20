@@ -1,0 +1,8 @@
+{% for i in object_list %}
+	<div class="book {{ i.category }} book__item">
+		<h1>{{ i.name_book }}</h1>
+		<p>Aftor - {{ i.autor }}</p>
+		<p>Category - {{ i.category }}</p>
+		<p>Date public - {{ i.date }}</p>
+	</div>
+{% endfor %}
