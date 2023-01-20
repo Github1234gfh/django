@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+	<div class="wrap">
+		<div class="content">
+			{% if user.is_authenticated %}
+				<div class="reg__block">
+					<a href="{% url 'logout' %}">Log Out</a>
+				</div>
+				{% include 'includes/menu.html' %}
+				<div class="books">
+					{% include 'includes/content.html' %}
+					<a href="{% url 'add' %}" class="ghjk"><button class="book book_jgkh">Add book</button></a>
+					<a href="{% url 'aply' %}" class="ghjk"><button class="book book_jgkh">book request</button></a>
+				</div>
+			{% else %}
+				<div class="reg__block">
+					<a href="{% url 'login' %}">Log In</a>
+					|
+					<a href="{% url 'signup' %}">Sign Up</a>
+				</div>
+				{% include 'includes/menu.html' %}
+				<div class="books">
+					{% include 'includes/content_logout.html' %}
+					<a href="{% url 'aply' %}" class="ghjk"><button class="book book_jgkh">book request</button></a>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
